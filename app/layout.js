@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
               closeButton
               expand={true}
             />
-            {children}
+            <SidebarProvider>{children}</SidebarProvider>
           </SessionProvider>
         </ThemeProvider>
       </body>
