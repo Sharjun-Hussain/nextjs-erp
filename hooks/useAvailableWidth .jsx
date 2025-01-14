@@ -23,7 +23,7 @@ const useAvailableWidth = () => {
     return () => window.removeEventListener("resize", calculateWidth);
   }, [state]);
 
-  return availableWidth;
+  return { availableWidth, state };
 };
 
 export default useAvailableWidth;
